@@ -84,11 +84,13 @@ function toggleTask(id) {
   renderTasks();
 }
 
+const totalTasks = document.querySelector('.total-tasks');
+const completedTasks = document.querySelector('.completed-tasks');
 function updateTaskCount() {
   const total = tasks.length;
   const completed = tasks.filter(tsk => tsk.completed).length;
-  document.querySelector('.total-tasks').textContent = `${total} : Tasks`;
-  document.querySelector('.completed-tasks').textContent = `${completed} : Completed`;
+  totalTasks.textContent = `${total} : Tasks`;
+  completedTasks.textContent = `${completed} : Completed`;
 }
 
 const clearCompletedBtn = document.getElementById('clear-completed');
