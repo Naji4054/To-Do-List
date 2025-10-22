@@ -9,6 +9,10 @@ function loadTasks() {
   }
 }
 
+function saveTasks() {
+  localStorage.setItem('todo_tasks', JSON.stringify(tasks));
+}
+
 const taskList = document.getElementById('task-list');
 const taskCount = document.getElementById('task-count');
 
@@ -61,22 +65,22 @@ function addTask(text) {
   };
 
   tasks.unshift(newTask); 
-  localStorage.setItem('todo_tasks', JSON.stringify(tasks));
+  saveTasks()
   renderTasks();
 }
 
 function deleteTask(id) {
   tasks = tasks.filter(t => t.id !== id);
-  localStorage.setItem('todo_tasks', JSON.stringify(tasks));
+  saveTasks()
   renderTasks();
 }
 
 function toggleTask(id) {
   tasks = tasks.map(tsk => {
     if (tsk.id === id) return { ...tsk, completed: !tsk.completed };
-    return t;
+    return tsk;
   });
-  localStorage.setItem('todo_tasks', JSON.stringify(tasks));
+  saveTasks()
   renderTasks();
 }
 
@@ -90,7 +94,7 @@ function updateTaskCount() {
 const clearCompletedBtn = document.getElementById('clear-completed');
 function clearCompleted() {
   tasks = tasks.filter(t => !t.completed);
-  localStorage.setItem('todo_tasks', JSON.stringify(tasks));
+  saveTasks()
   renderTasks();
 }
 
