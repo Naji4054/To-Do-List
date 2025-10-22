@@ -73,6 +73,7 @@ function deleteTask(id) {
   tasks = tasks.filter(t => t.id !== id);
   saveTasks()
   renderTasks();
+  updateTaskCount();
 }
 
 function toggleTask(id) {
