@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> To-Do Application</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+        
+  </header>
+
+  <main id="vanta-bg">
+    <section>
+        <div class="container application">
+            <form id="task-form">
+              <div>
+                <h1>TASK MANAGER</h1>
+              </div>
+              <div class="task">
+                <input id="task-input" type="text" placeholder="Add a new task..." autocomplete="off"/>
+                <button type="submit">Add Task</button>
+              </div>
+            </form>
+            <div class="controls">
+              <div class="task-update">
+                <span class="counter total-tasks">0</span>
+                <span class="counter completed-tasks">0</span>
+              </div>
+              <button id="clear-completed">Clear Completed</button>
+            </div>
+            <ul id="task-list" class="task-list"></ul>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="credits">
+         credits @muhammed naji 
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
